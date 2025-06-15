@@ -16,16 +16,17 @@ function Game() {
         className="guess-input-wrapper"
         onSubmit={(event) => {
           event.preventDefault();
-          if (guess.length !== 5) {
-            window.alert("Please enter a 5 letter word");
-          } else {
-            console.log({ guess });
-            setGuess("");
-          }
+          console.log({ guess });
+          setGuess("");
         }}
       >
         <label htmlFor="guess-input">Enter guess:</label>
         <input
+          required
+          minLength={5}
+          maxLength={5}
+          pattern="[a-zA-Z]{5}"
+          title="Please enter a 5 letter word"
           id="guess-input"
           type="text"
           value={guess}
