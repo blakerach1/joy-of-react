@@ -7,7 +7,6 @@ function WordForm({ guess, setGuess, setGuesses }) {
         className="guess-input-wrapper"
         onSubmit={(event) => {
           event.preventDefault();
-          console.log({ guess });
           const nextGuess = {
             id: crypto.randomUUID(),
             label: guess,
