@@ -3,11 +3,12 @@ import { range } from "../../utils";
 import * as constants from "../../constants";
 
 function Guess({ guess }) {
+  console.log("guess first letter: ,", guess[0]);
   return (
-    <p key={guess.id} className="guess">
+    <p className="guess">
       {range(constants.WORD_LENGTH).map((i) => (
-        <span key={`${guess.id}-${i}`} className="cell">
-          {guess.label[i]}
+        <span key={`${guess}-${i}`} className={`cell ${guess[i].status}`}>
+          {guess[i].letter}
         </span>
       ))}
     </p>
